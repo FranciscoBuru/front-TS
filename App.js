@@ -3,10 +3,10 @@ import './App.css';
 import NavBar from './NavBar';
 
 
-import Formcommunity from './formcommunity';
-import RegisterPage from './registerpage';
-import Formuser from './formuser';
-import Home from './Home';
+import Formcommunity from './src/formcommunity';
+import RegisterPage from './src/registerpage';
+import Formuser from './src/formuser';
+import Home from './src/Home';
 import { BrowserRouter as Router,Route,Switch,Link,Redirect, Routes } from "react-router-dom";
 
 
