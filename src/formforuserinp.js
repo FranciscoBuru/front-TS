@@ -30,22 +30,11 @@ function FormUserInp() {
 
     const { state, send } = useContractFunction(auctionContract, 'addUnit', { transactionName: 'addUnit' })
 
-    const { status } = state
-
-    const isMining = status === "Mining"
-    const [txStatus, setTxStatus] = useState(false)
-
 
     const close = () => {
         void send(NooP, name, '0x41Dc5c8de461b7dcaD5a0044C0F1F69Af4d90Ab1')
     }
 
-    useEffect(() => {
-        if (status === "Success") {
-           setTxStatus(true)
-      }
-
-   }, [status])
 
 
 

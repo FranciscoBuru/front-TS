@@ -1,7 +1,13 @@
 import React from "react";
 import './dashboarduser.css';
-import {useState} from "react";
 import { Navigate,useNavigate } from 'react-router-dom';
+import {useState, useEffect} from "react";
+import { utils, getDefaultProvider, ethers } from 'ethers'
+import { Contract } from '@ethersproject/contracts'
+import Child from "./chain-info/Child.json"
+import { useEthers, useContractFunction } from '@usedapp/core'
+
+
 function DashboardUser(){
     const navigate = useNavigate();
     const[TypeHere,setTypeHere]=useState('Type Message Here')
@@ -12,6 +18,19 @@ function DashboardUser(){
     function getTypeHere(val){
         setTypeHere(val.target.value)
     }
+
+    const { activateBrowserWallet, account } = useEthers()
+    const abi = new utils.Interface(Child["abi"])
+    const auctionContract = new Contract('0x41Dc5c8de461b7dcaD5a0044C0F1F69Af4d90Ab1', abi, getDefaultProvider())
+
+    const { state, send } = useContractFunction(auctionContract, 'depositt', { transactionName: 'depositt', gasLimit: 210000 })
+
+    const value = ethers.utils.formatUnits(30, "ether");
+
+    const close = () => {
+        void send(10000, 11, 10, 2022)
+    }
+
     return(
         
         <div>
@@ -23,7 +42,7 @@ function DashboardUser(){
             </div>
             <p className="ProDash">Property Dashboard</p>
             <p className="TD">Total Dues: 1 month</p>
-            <button className="PA">Pay All</button>
+            <button onClick={close} className="PA">Pay All</button>
             <p className="LP">Last Payments:</p>
             <p className="AdminYes">Are you a admin? If yes</p>
             <button onClick={() => navigate("/dashboardadmin")} className="CM">Click Me</button>
