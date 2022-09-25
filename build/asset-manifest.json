@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c646dc32.css",
+    "main.js": "/static/js/main.35d0733c.js",
+    "static/media/screenshot-20220916-at-2114-1@2x.png": "/static/media/screenshot-20220916-at-2114-1@2x.141ce4c77b54018c9545.png",
+    "static/media/AaveCoin.png": "/static/media/AaveCoin.1dbefa44f1183178a106.png",
+    "static/media/Saly-37.png": "/static/media/Saly-37.6defbddbab630c199bfc.png",
+    "static/media/FINAL_LOGOJPG-removebg-preview.png": "/static/media/FINAL_LOGOJPG-removebg-preview.8e01a0ebc6e3db482d34.png",
+    "static/media/Group-5.png": "/static/media/Group-5.b760c3b62742ae858604.png",
+    "static/media/epns.png": "/static/media/epns.6fae3196d3f1e556df23.png",
+    "static/media/Group-12.png": "/static/media/Group-12.b7248a9dbea8916f5494.png",
+    "index.html": "/index.html",
+    "main.c646dc32.css.map": "/static/css/main.c646dc32.css.map",
+    "main.35d0733c.js.map": "/static/js/main.35d0733c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c646dc32.css",
+    "static/js/main.35d0733c.js"
+  ]
+}
