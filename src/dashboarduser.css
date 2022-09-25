@@ -103,6 +103,22 @@
     
 
 }
+.LPP{
+    font-family: 'Bree Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 50px;
+    color: #FFFFFF;
+    z-index: 8;
+    position: absolute;
+    width: 380px;
+    height: 60px;
+    left: 50px;
+    top: 190px;
+    
+
+}
 .TD{
     position: absolute;
     width: 183px;
@@ -143,6 +159,22 @@
     height: 62px;
     left: 648px;
     top: 326px;
+    
+    font-family: 'Bree Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 54px;
+    
+    color: #FFFFFF;  
+    z-index: 11; 
+}
+.RR{
+    position: absolute;
+    width: 500px;
+    height: 62px;
+    left: 648px;
+    top: 500px;
     
     font-family: 'Bree Serif';
     font-style: normal;

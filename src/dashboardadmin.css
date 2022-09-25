@@ -149,6 +149,8 @@
     left: 1278px;
     top: 762px;
 
+    cursor: pointer;
+
     background: #01213A;
     box-shadow: 0px 4px 4px #0D0E14;
     border-radius: 17px;

@@ -42,11 +42,13 @@ function DashboardUser(){
             <p className="TD">Total Dues: 1 month</p>
             <button onClick={close} className="PA">Pay All</button>
             <p className="LP">Last Payments:</p>
+            <p className="LPP">--August monthly payment</p>
             <p className="AdminYes">Are you a admin? If yes</p>
             <button onClick={() => navigate("/dashboardadmin")} className="CM">Click Me</button>
             <p className="R">Receipts:</p>
             <input type="text" value={Search} onChange={getSearch} name="Search" id="Search" className="Search"/>
             <button className="S"></button>
+            <p className="RR">You have no recipts :/</p>
             <p className="SM">Send message to Admin:</p>
             <input type="text" value={TypeHere} onChange={getTypeHere} name="TypeHere" id="TypeHere" className="TypeHere"/>
             <button className="SendMessage">Send</button>

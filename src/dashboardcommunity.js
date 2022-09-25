@@ -6,11 +6,20 @@ function DashboardCommunity(){
             <p className="CommDash">Community Dashboard</p>
             <div className="Ellipse10"></div>
             <div className="Ellipse11"></div>
-            <div className="GR1"></div>
-            <div className="GR2"></div>
-            <div className="GR3"></div>
-            <div className="GR4"></div>
-            <div className="GR5"></div>
+            <div className="GR1">
+            <br/>
+                TV in contract: 20 USDT
+                <br/>
+                <br/>
+                TV in aave: 50 USDT
+            </div>
+            <div className="GR2">
+            <br/>
+                Total money made in aave: 31.25 USDT
+            </div>
+            <div className="GR4">
+                Graphs coming soon...
+            </div>
             
 
         </div>

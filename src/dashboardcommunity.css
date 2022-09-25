@@ -19,6 +19,13 @@
     z-index: 2;
 }
 .GR1{
+    font-family: 'Bree Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 49px;
+    color: #FFFFFF;
+
     position: absolute;
     width: 700px;
     height: 288px;
@@ -33,6 +40,13 @@
     z-index: 3;
 }
 .GR2{
+    font-family: 'Bree Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 49px;
+    color: #FFFFFF;
+    
 
     position: absolute;
     width: 700px;
@@ -62,11 +76,19 @@
     z-index: 5;
 }
 .GR4{
+
+    font-family: 'Bree Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 49px;
+    color: #FFFFFF;
+
     position: absolute;
     width: 811px;
-    height: 406px;
+    height: 606px;
     left: 903px;
-    top: 310px;
+    top: 150px;
     
     background: linear-gradient(152.97deg, rgba(21, 21, 21, 0.2) 0%, rgba(21, 21, 21, 0) 100%);
     backdrop-filter: blur(21px);
