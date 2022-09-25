@@ -17,12 +17,12 @@ function App() {
     <NavBar/>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/formuser' element={<Formuser/>}/>
-      <Route path='/formcommunity' element={<Formcommunity/>}/>
-      <Route path='/registerpage' element={<RegisterPage/>}/>
-      <Route path='/dashboardcommunity' element={<DashboardCommunity/>}/>
-      <Route path='/dashboarduser' element={<DashboardUser/>}/>
-      <Route path='/dashboardadmin' element={<DashboardAdmin/>}/>
+      <Route path='/:formuser' element={<Formuser/>}/>
+      <Route path='/:formcommunity' element={<Formcommunity/>}/>
+      <Route path='/:registerpage' element={<RegisterPage/>}/>
+      <Route path='/:dashboardcommunity' element={<DashboardCommunity/>}/>
+      <Route path='/:dashboarduser' element={<DashboardUser/>}/>
+      <Route path='/:dashboardadmin' element={<DashboardAdmin/>}/>
 
     </Routes>
     </>
