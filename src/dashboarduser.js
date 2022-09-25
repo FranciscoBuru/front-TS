@@ -22,7 +22,7 @@ function DashboardUser(){
             
             </div>
             <p className="ProDash">Property Dashboard</p>
-            <p className="TD">Total Dues:</p>
+            <p className="TD">Total Dues: 1 month</p>
             <button className="PA">Pay All</button>
             <p className="LP">Last Payments:</p>
             <p className="AdminYes">Are you a admin? If yes</p>

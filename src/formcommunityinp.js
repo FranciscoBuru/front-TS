@@ -1,7 +1,13 @@
 import React from "react";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import './formcommunityinp.css';
 import salyfinger from "./images/Saly-37.png";
+import { utils, getDefaultProvider } from 'ethers'
+import { Contract } from '@ethersproject/contracts'
+import { DAppProvider, useEthers, useContractFunction } from '@usedapp/core'
+
+import Factory from "./chain-info/Factory.json"
+
 function FormcommunityInp(){
     const[name,setName]=useState('Enter Your Name Here')
     const[Address1,setAddress1]=useState('Address Line 1')
@@ -9,7 +15,7 @@ function FormcommunityInp(){
     const[City,setCity]=useState('City')
     const[State,setState]=useState('State')
     const[Country,setCountry]=useState('Country')
-    const[WalletT,setWalletT]=useState('Treasury Wallet Address')
+    const[WalletT,setWalletT]=useState('To be created')
     const[WalletA,setWalletA]=useState('Administrator Wallet Address')
     const[UniqueId,setUniqueId]=useState('Enter UniqueID here')
     function getUniqueId(val){
@@ -41,10 +47,33 @@ function FormcommunityInp(){
         setName(val.target.value)
 
     }
+
+    const { activateBrowserWallet, account } = useEthers()
+    const abi = new utils.Interface(Factory["abi"])
+    const auctionContract = new Contract('0xe9536CC8ea9890a2a2006B3Da52BC3a90A80e3c0', abi, getDefaultProvider())
+
+    const { state, send } = useContractFunction(auctionContract, 'generateChild', { transactionName: 'generateChild' })
+
+    const { status } = state
+
+    const isMining = status === "Mining"
+    const [txStatus, setTxStatus] = useState(false)
+
+
+    const close = () => {
+        void send(1)
+    }
+
+    useEffect(() => {
+        if (status === "Success") {
+           setTxStatus(true)
+      }
+
+   }, [status])
+
+
     return (
         <div>
-            <form action="">
-                <button className="CW">Connect Wallet</button>
             <div className="ForCommName">
                <div className="ForCommNameText"> <label htmlFor="ForName">Name</label></div>
                <input type="text" value={name} onChange={getName} required name="CommName" id="CommName" className="ForCommNameInput"/>
@@ -59,18 +88,17 @@ function FormcommunityInp(){
             </div>
             <div className="ForTreasuryWallet">
                 <div className="ForTreasuryWalletText"><label htmlFor="ForTreasuryWallet">Treasury Wallet</label></div>
-                <input type="text" value={WalletT} onChange={getWalletT} name="TreasuryWallet" id="TreasuryWallet" className="ForTreasuryWalletInput"/>
+                <input type="text" value={WalletT} name="TreasuryWallet" id="TreasuryWallet" className="ForTreasuryWalletInput"/>
             </div>
             <div className="ForAdministratorWallet">
                 <div className="ForAdministratorWalletText"><label htmlFor="ForAdministratorWallet">Administrator Wallet</label></div>
-                <input type="text" value={WalletA} onChange={getWalletA} name="AdmistratorWallet" id="AdmistratorWallet" className="ForAdmistratorWalletInput"/>
+                <input type="text" value={account} name="AdmistratorWallet" id="AdmistratorWallet" className="ForAdmistratorWalletInput"/>
                 <input type="text" value={UniqueId} onChange={getUniqueId} name="UniqueId" id="UniqueId" className="ForUniqueIdInput"/>
-                <button className="SubmitCommunity"> Submit Community </button>
+                <button onClick={close} className="SubmitCommunity"> Submit Community </button>
             </div>
             <div className="imagefinger">
                  <img src={salyfinger} alt="3DImage" width={494} height={479}/>
               </div>
-            </form>
 
         </div>
     );

@@ -9,9 +9,7 @@ import "./formuserinp.css";
 
 function Formuser() {
   return (
-    <div>
-      <button className="ConnectWalletButton">Connect Wallet</button>
-        
+    <div>      
       <p className="Tagline">
         Now you will be able to <span className="tarce">trace</span> each
         transaction on the go

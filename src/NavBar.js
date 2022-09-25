@@ -1,5 +1,8 @@
 import earth from './images/FINAL_LOGOJPG-removebg-preview.png';
+import { Mainnet, DAppProvider, Config, Mumbai, useEthers } from '@usedapp/core'
 function NavBar() {
+
+    const { activateBrowserWallet, account } = useEthers()
     return (
         <div >
         <nav className="nav">
@@ -23,9 +26,13 @@ function NavBar() {
        <li>
         <a href="/dashboarduser">Dashboard User</a>
        </li>
+       <li>
+          {!account && <button onClick={() => activateBrowserWallet()}>Connect</button>}
+          {account && <button>{account}</button>}
+       </li>
        
     </ul>
-    <button className='signinbutton'> Sign In </button>
+        
     </div>
     );
 }
