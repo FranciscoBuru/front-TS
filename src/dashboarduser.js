@@ -25,10 +25,8 @@ function DashboardUser(){
 
     const { state, send } = useContractFunction(auctionContract, 'depositt', { transactionName: 'depositt', gasLimit: 210000 })
 
-    const value = ethers.utils.formatUnits(30, "ether");
-
     const close = () => {
-        void send(10000, 11, 10, 2022)
+        void send(utils.parseEther(String(20)), 11, 10, 2022)
     }
 
     return(
